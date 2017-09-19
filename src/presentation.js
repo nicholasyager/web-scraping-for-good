@@ -1,4 +1,5 @@
-// Import React
+/* eslint import/no-webpack-loader-syntax: off */
+
 // Import React
 import React from "react";
 
@@ -16,11 +17,16 @@ import {
   S,
   Notes,
   Appear,
-  Image
+  Image,
+  Code,
+  CodePane
 } from "spectacle";
+
+import CodeSlide from 'spectacle-code-slide';
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
+import robotTxt from "./assets/robots.txt";
 
 // Require CSS
 require("normalize.css");
@@ -35,6 +41,8 @@ const theme = createTheme({
   primary: "Montserrat",
   secondary: "Helvetica"
 });
+
+console.log(robotTxt);
 
 export default class Presentation extends React.Component {
   render() {
@@ -114,23 +122,65 @@ export default class Presentation extends React.Component {
 
         {/* Ethics */}
        <Slide bgColor="primary">
-        <Heading size={4} textColor="secondary">
-          Is it <S type="italic" textColor="tertiary">ethical</S> to scrape data from the public internet?
+        <Heading size={4} textColor="secondary" fit>
+          How do I scrape public data <S type="italic" textColor="tertiary">ethically</S>?
         </Heading>
       </Slide>
 
         {/* Guidelines to consider */}
 
-        {/* Test your moral compass */}
-
-        
         <Slide bgColor="primary">
-          <Heading size={6} textColor="secondary" caps>Header</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+          <Heading size={5} textColor="secondary" caps>Rule 1</Heading>
+          <Text size={6} textColor="secondary">Scraping should be a last resort.</Text>
           <Notes>
             Test
           </Notes>
         </Slide>
+
+        <Slide bgColor="primary">
+          <Heading size={5} textColor="secondary" caps>Rule 2</Heading>
+          <Text size={6} textColor="secondary">Respect <Code>robots.txt</Code> if possible.</Text>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+
+        <CodeSlide
+          code=""
+          ranges={[
+            {loc: [0, 1], title: "The User-Agent the rule applies to."}
+          ]}
+        />
+
+        {/*
+        <Slide bgColor="primary">
+          <CodePane source=/>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+        */}
+  
+        <Slide bgColor="primary">
+          <Heading size={5} textColor="secondary" caps>Rule 1</Heading>
+          <Text size={6} textColor="secondary">Scraping should be a last resort.</Text>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Heading size={5} textColor="secondary" caps>Rule 1</Heading>
+          <Text size={6} textColor="secondary">Scraping should be a last resort.</Text>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+
+        {/* Test your moral compass */}
+
+        
+   
          <Slide bgColor="primary">
           <Heading size={6} textColor="secondary" caps>Header</Heading>
           <Text size={6} textColor="secondary">Standard text</Text>
