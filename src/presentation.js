@@ -19,30 +19,30 @@ import {
   Appear,
   Image,
   Code,
-  CodePane
+  CodePane,
+  Link
 } from "spectacle";
-
-import CodeSlide from 'spectacle-code-slide';
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 import robotTxt from "./assets/robots.txt";
+import headerExample from "./assets/headers-example.txt";
+import nflgame from "./assets/nflgame.jpg";
 
 // Require CSS
+require("./css/prism-monokai.css");
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
+  secondary: "white",
+  primary: "#1F2022",
   tertiary: "#03A9FC",
   quartenary: "#CECECE"
 }, {
   primary: "Montserrat",
   secondary: "Helvetica"
 });
-
-console.log(robotTxt);
 
 export default class Presentation extends React.Component {
   render() {
@@ -68,16 +68,16 @@ export default class Presentation extends React.Component {
           <Heading size={1} textColor="secondary" >
             ¯\_(ツ)_/¯
           </Heading>
-          <Text margin="15px 0 0" >
+          <Text margin="15px 0 0" textColor="secondary">
             It depends!
           </Text>
         </Slide>
 
         <Slide bgImage="https://c1.staticflickr.com/4/3860/14931652922_d93d9c4977_b.jpg" bgDarken="0.75">
-          <Heading size={5}  fit textColor="primary">
+          <Heading size={5}  fit textColor="secondary">
             Historically, U.S. courts have ruled that
           </Heading>
-          <List ordered textFont="secondary" textColor="primary">
+          <List ordered textFont="secondary" textColor="secondary">
             <Appear>
               <ListItem>You cannot copyright facts</ListItem>
             </Appear>
@@ -99,10 +99,10 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgImage="https://c1.staticflickr.com/4/3860/14931652922_d93d9c4977_b.jpg" bgDarken="0.75">
-          <Heading size={5}  fit textColor="primary">
+          <Heading size={5}  fit textColor="secondary">
             U.S. courts have also ruled that
           </Heading>
-          <List ordered textFont="secondary" textColor="primary">
+          <List ordered textFont="secondary" textColor="secondary">
             <Appear>
               <ListItem>You cannot access data without authorization or in a manner that will exceed your authorization.</ListItem>
             </Appear>
@@ -116,7 +116,7 @@ export default class Presentation extends React.Component {
           <Notes>
             1. Comnputer Fraud and Abuse Act (CFAA).
             2. Tresspass to Chattels.
-            3. Digital Millennium Copyright Act ("DMCA")
+            3. Digital Millennium Copyright Act (DMCA)
           </Notes>
         </Slide>
 
@@ -139,69 +139,153 @@ export default class Presentation extends React.Component {
 
         <Slide bgColor="primary">
           <Heading size={5} textColor="secondary" caps>Rule 2</Heading>
-          <Text size={6} textColor="secondary">Respect <Code>robots.txt</Code> if possible.</Text>
+          <Text size={6} textColor="secondary">Identify yourself.</Text>
           <Notes>
             Test
           </Notes>
         </Slide>
 
-        <CodeSlide
-          code=""
+        <Slide bgColor="#272822">
+          <CodePane source={headerExample} lang="python"/>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+
+{/*        <CodeSlide 
+          lang="pythony"
+          bgColor="#002b36"
+          color="#eee8d5"
+          code={headerExample}
+          border="0px"
           ranges={[
-            {loc: [0, 1], title: "The User-Agent the rule applies to."}
+            {loc: [0, 9], title: "Requests Example"},
+            {loc: [2, 5], note: 'Set "User-Agent" in a python dict.'},
+            {loc: [8, 9], note: "Pass the headers dict to requests.get through the headers argument."}
           ]}
-        />
-
-        {/*
-        <Slide bgColor="primary">
-          <CodePane source=/>
-          <Notes>
-            Test
-          </Notes>
-        </Slide>
-        */}
-  
-        <Slide bgColor="primary">
-          <Heading size={5} textColor="secondary" caps>Rule 1</Heading>
-          <Text size={6} textColor="secondary">Scraping should be a last resort.</Text>
-          <Notes>
-            Test
-          </Notes>
-        </Slide>
+        />*/}
 
         <Slide bgColor="primary">
-          <Heading size={5} textColor="secondary" caps>Rule 1</Heading>
-          <Text size={6} textColor="secondary">Scraping should be a last resort.</Text>
+          <Heading size={5} textColor="secondary" caps>Rule 3</Heading>
+          <Text size={6} textColor="secondary">Respect <Code textColor="secondary" bgColor="primary">robots.txt</Code> if possible.</Text>
           <Notes>
             Test
           </Notes>
         </Slide>
 
-        {/* Test your moral compass */}
+{/*        <CodeSlide 
+          bgColor="#002b36"
+          color="#eee8d5"
+          code={robotTxt}
+          border="0px"
+          lang="HTTP"
+          ranges={[
+            {loc: [0, 3], title: "robots.txt"},
+            {loc: [0, 2], note: "Disallow access to /secret-data for all user agents."},
+            {loc: [3, 5], note: "Disallow all access for John's Evil Bot."},
+            {loc: [6, 8], note: "Allow access to all paths for Nick's Super Awesome Nearly-Sentient Bot."}
+          ]}
+        />*/}
 
-        
-   
-         <Slide bgColor="primary">
-          <Heading size={6} textColor="secondary" caps>Header</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+         <Slide bgColor="#272822" >
+          <CodePane source={robotTxt} lang="properties" fill/>
           <Notes>
             Test
           </Notes>
         </Slide>
-         <Slide bgColor="primary">
-          <Heading size={6} textColor="secondary" caps>Header</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+
+        <Slide bgColor="primary">
+          <Heading size={4} textColor="secondary" fit>Use your best judgement.</Heading>
           <Notes>
             Test
           </Notes>
         </Slide>
-         <Slide bgColor="primary">
-          <Heading size={6} textColor="secondary" caps>Header</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+
+        <Slide bgColor="primary">
+          <Heading size={5} textColor="secondary" caps>Rule 4</Heading>
+          <Text size={6} textColor="secondary">Request data at a reasonable rate.</Text>
           <Notes>
             Test
           </Notes>
         </Slide>
+
+        <Slide bgColor="primary">
+          <Image src="https://i.makeagif.com/media/9-13-2015/WWhtKL.gif"/>
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Heading size={5} textColor="secondary" caps>Rule 5</Heading>
+          <Text size={6} textColor="secondary">Create <S type="italic" textColor="tertiary">new</S> value from the data collected.</Text>
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Heading size={5} textColor="secondary" caps>Rule 6</Heading>
+          <Text size={6} textColor="secondary">Give back to the community.</Text>
+        </Slide>
+
+        <Slide bgImage={nflgame}>
+        </Slide>
+
+         <Slide bgColor="primary">
+          <Heading size={4} textColor="secondary" caps fit>Even you can be a Data Hero!</Heading>
+          <Text textSize={15} textColor="secondary">Slides available at <Link href="https://nicholasyager.com">nicholasyager.com</Link>.</Text>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+
+{/*
+        <Slide bgColor="primary">
+          <Heading size={3} textColor="secondary" caps >Fair Use</Heading>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+
+         <Slide bgColor="primary">
+          <BlockQuote>
+            <Quote textSize={50} textFont="secondary"  textColor="secondary">
+              The fair use of a copyrighted work ... for purposes such as criticism, 
+              comment, news reporting, teaching ... , scholarship, or research, 
+              is not an infringement of copyright. 
+            </Quote>
+            <Cite>
+              <Link href="https://www.law.cornell.edu/uscode/text/17/107">17 U.S.C. § 107</Link>
+            </Cite>
+          </BlockQuote>
+          <Notes>
+            Test
+          </Notes>
+        </Slide>
+
+        <Slide bgImage="https://c1.staticflickr.com/4/3860/14931652922_d93d9c4977_b.jpg" bgDarken="0.75">
+          <Heading size={5}  fit textColor="secondary">
+            Factors for determining fair use
+          </Heading>
+          <List ordered textFont="secondary" textColor="secondary">
+            <Appear>
+              <ListItem>The purpose and character of the use</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem margin="15px 0 0" >The nature of the copyrighted work</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem margin="15px 0 0" >The amount and substantiality of the portion taken</ListItem>
+            </Appear>
+             <Appear>
+              <ListItem margin="15px 0 0" >The effect of the use upon the potential market</ListItem>
+            </Appear>
+          </List>
+           <Notes>  
+            <ul>
+             <li>The purpose and character of the use</li>
+            <li>The nature of the copyrighted work</li>
+            <li>The amount and substantiality of the portion taken</li>
+            <li>The effect of the use upon the potential market</li>
+            </ul>
+          </Notes>
+        </Slide>*/}
+
       </Deck>
     );
   }

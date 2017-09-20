@@ -1,4 +1,8 @@
 User-agent: *
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /~joe/
+Disallow: /secret-data
+
+User-agent: John's Evil Boy
+Disallow: /
+
+User-agent: Nick's Super Awesome Nearly-Sentient Bot
+Disallow:
