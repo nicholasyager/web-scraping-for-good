@@ -1,9 +1,0 @@
-import requests
-
-headers = {
-	"User-Agent": "Nick's Super Awesome Bot (yager@nicholasyager.com)"	
-}
-
-url = "http://meaning-of-life.biz/lottery-numbers.html"
-
-lottery-page = requests.get(url, headers=headers)

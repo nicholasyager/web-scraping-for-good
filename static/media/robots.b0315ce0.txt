@@ -1,8 +1,0 @@
-User-agent: *
-Disallow: /secret-data
-
-User-agent: John's Evil Boy
-Disallow: /
-
-User-agent: Nick's Super Awesome Nearly-Sentient Bot
-Disallow:
