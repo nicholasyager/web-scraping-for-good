@@ -91,7 +91,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgColor="primary">
-          <Image src="http://33.media.tumblr.com/8bc2351584653e697d150a2647f24869/tumblr_nk4myierOs1u10srao1_500.gif"/>
+          <Image src="https://33.media.tumblr.com/8bc2351584653e697d150a2647f24869/tumblr_nk4myierOs1u10srao1_500.gif"/>
           <BlockQuote >
             <Quote textColor="secondary">No one can stop me!</Quote>
             <Cite>You, right now.</Cite>
