@@ -1,6 +1,6 @@
 {
   "name": "web-scraping-for-good",
-  "homepage": "http://nicholasyager.github.io/web-scraping-for-good",
+  "homepage": "https://nicholasyager.com/presentations/web-scraping-for-good/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -50,7 +50,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
