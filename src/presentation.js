@@ -152,19 +152,6 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-{/*        <CodeSlide 
-          lang="pythony"
-          bgColor="#002b36"
-          color="#eee8d5"
-          code={headerExample}
-          border="0px"
-          ranges={[
-            {loc: [0, 9], title: "Requests Example"},
-            {loc: [2, 5], note: 'Set "User-Agent" in a python dict.'},
-            {loc: [8, 9], note: "Pass the headers dict to requests.get through the headers argument."}
-          ]}
-        />*/}
-
         <Slide bgColor="primary">
           <Heading size={5} textColor="secondary" caps>Rule 3</Heading>
           <Text size={6} textColor="secondary">Respect <Code textColor="secondary" bgColor="primary">robots.txt</Code> if possible.</Text>
@@ -172,21 +159,6 @@ export default class Presentation extends React.Component {
             Test
           </Notes>
         </Slide>
-
-{/*        <CodeSlide 
-          bgColor="#002b36"
-          color="#eee8d5"
-          code={robotTxt}
-          border="0px"
-          lang="HTTP"
-          ranges={[
-            {loc: [0, 3], title: "robots.txt"},
-            {loc: [0, 2], note: "Disallow access to /secret-data for all user agents."},
-            {loc: [3, 5], note: "Disallow all access for John's Evil Bot."},
-            {loc: [6, 8], note: "Allow access to all paths for Nick's Super Awesome Nearly-Sentient Bot."}
-          ]}
-        />*/}
-
          <Slide bgColor="#272822" >
           <CodePane source={robotTxt} lang="properties" fill/>
           <Notes>
